@@ -1,0 +1,18 @@
+site_name: Collibra Guides (Markdown Only)
+site_description: CPSH and DQO customization guides in Markdown
+repo_url: https://github.com/<your-user>/<your-repo>
+site_url: https://<your-user>.github.io/<your-repo>/
+nav:
+  - Home: index.md
+  - CPSH Guide:
+      - Overview: cpsh/index.md
+      - 1. Preparation: cpsh/01-preparation.md
+      - 2. Steps: cpsh/02-steps.md
+      - 3. Validation: cpsh/03-validation.md
+      - 4. Troubleshooting: cpsh/04-troubleshooting.md
+  - DQO Guide:
+      - Overview: dqo/index.md
+      - 1. Preparation: dqo/01-preparation.md
+      - 2. Steps: dqo/02-steps.md
+      - 3. Validation: dqo/03-validation.md
+      - 4. Troubleshooting: dqo/04-troubleshooting.md
