@@ -1,6 +1,6 @@
 # Create a custom header and footer in Collibra Data Quality & Observability
 
-There are two workarounds - one with Nginx and the other with Apache HTTP 2.4. Both options are documented below. Apache HTTP 2.4 consumes ~80 MB RAM vs. ~20 MB for Nginx.
+There are two workarounds - one with Nginx and the other with Apache HTTP 2.4. Both options are documented in this repository. Apache HTTP 2.4 consumes ~80 MB RAM vs. ~20 MB for Nginx.
 
 ## Reverse-proxy injection via Nginx sub_filter
 
