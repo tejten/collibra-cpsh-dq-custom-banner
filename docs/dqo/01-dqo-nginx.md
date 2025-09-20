@@ -90,7 +90,7 @@ Open a browser tab – a blue strip now appears at the very top and bottom of ev
 
 ## Traffic flow & banner visibility:
 
-The “CONFIDENTIAL” banner is injected by Nginx reverse-proxy, not by the Collibra application itself. Any user who reaches the service through the canonical DNS name – `http(s)://dq01.example.com (ports 80/443)` – is automatically routed through that proxy and therefore always sees the banner. However, if someone bypasses DNS and goes straight to the DQO process on its internal port (http://dq01.example.com:9000 or the node’s raw IP + 9000), their request never touches Nginx and the banner will not be present. In production we prevent such “direct-port” access with a firewall rule and ask users to bookmark only the proxy URL; this guarantees that every page is served through Nginx and remains compliant with the banner requirement.
+The “CONFIDENTIAL” banner is injected by Nginx reverse-proxy, not by the Collibra application itself. Any user who reaches the service through the canonical DNS name – `http(s)://dq01.example.com (ports 80/443)` – is automatically routed through that proxy and therefore always sees the banner. However, if someone bypasses DNS and goes straight to the DQO process on its internal port (`http://dq01.example.com:9000` or the node’s raw IP + 9000), their request never touches Nginx and the banner will not be present. In production we prevent such “direct-port” access with a firewall rule and ask users to bookmark only the proxy URL; this guarantees that every page is served through Nginx and remains compliant with the banner requirement.
 
 ## Upgrade notes:
 
