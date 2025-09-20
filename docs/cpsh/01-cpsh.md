@@ -9,9 +9,9 @@
    a. Place another `<div>` before and/or after the `<div id="root">` to be used for the header banner and/or footer banner.  
       (See green highlighted code in the example below)
 
-      i. Within these `<div>` elements, add the text you want to show in each banner, respectively.  
+      	i. Within these `<div>` elements, add the text you want to show in each banner, respectively.  
 
-      ii. Make sure the `<div>` tags have classes to target any styling needs.
+      	ii. Make sure the `<div>` tags have classes to target any styling needs.
 
    b. To add the styling for the new `<div>` elements, add a `<style>` block immediately after the `<body>` tag.  
       (See yellow highlighted code in the example below)
@@ -23,7 +23,7 @@
 
 Example:
 
-The HTML snippet below shows simple banners that use this approach. It demonstrates the HTML code to add custom banners (highlighted in yellow and green) and how the banners appear in the Collibra UI. NOTE: The `<html>`, `<head>` and `<body>` tags have been simplified for demonstration purposes. The `index.html` page you see may look different.
+The HTML snippet below shows simple banners that use this approach. It demonstrates the HTML code to add custom banners (highlighted in yellow and green) and how the banners appear in the Collibra UI. **NOTE:** The `<html>`, `<head>` and `<body>` tags have been simplified for demonstration purposes. The `index.html` page you see may look different.
 
 HTML snippet:
 
