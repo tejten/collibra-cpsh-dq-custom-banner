@@ -86,3 +86,15 @@ Open a browser tab – a blue strip now appears at the very top and bottom of ev
 | Risk to uptime            | Nginx runs in its own systemd service; we can add it to the Collibra start/stop scripts or supervise with systemd-watchdog. Memory footprint < 20 MB. |
 | Patching cadence          | Red Hat back-ports CVE fixes every 4–6 weeks. Updating is a single dnf update nginx and 1-second reload (`systemctl reload nginx`) – no Collibra restart required. |
 | Single point of failure   | If a second node is added later, the same 4-line config can be placed behind the load balancer, or we can run two Nginx instances with keepalived for VIP fail-over. |
+
+
+## Traffic flow & banner visibility:
+
+The “CONFIDENTIAL” banner is injected by Nginx reverse-proxy, not by the Collibra application itself. Any user who reaches the service through the canonical DNS name – `http(s)://dq01.example.com (ports 80/443)` – is automatically routed through that proxy and therefore always sees the banner. However, if someone bypasses DNS and goes straight to the DQO process on its internal port (http://dq01.example.com:9000 or the node’s raw IP + 9000), their request never touches Nginx and the banner will not be present. In production we prevent such “direct-port” access with a firewall rule and ask users to bookmark only the proxy URL; this guarantees that every page is served through Nginx and remains compliant with the banner requirement.
+
+## Upgrade notes:
+
+- All changes live only in /etc/nginx/conf.d/dqo.conf. Upgrading or re-deploying DQO does not overwrite the banner.
+- After patching DQO, simply test the URL once - no additional steps.
+- To change banner text or color later, edit the `<style> / <div>` in the same file and reload Nginx.
+
